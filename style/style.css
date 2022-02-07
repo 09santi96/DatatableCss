@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --dt-status-available-color: greenyellow;
+    --dt-status-away-color: lightsalmon;
+    --dt-status-offline-color:  lightgray;
+
+    --dt-padding: 12px;
+    --dt-padding-s: 6px;
+    --dt-padding-xs: 2px;
+
+    --dt-border-radius: 3px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    overflow: auto; /*cambiar para tabla mas grande*/
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #373838, #2d3235); 
+}
+/*--------------------------------position and color background tricolor ----------------------------------*/
+section .color{
+    z-index: -1;
+    position: fixed;
+    filter: blur(150px);
+}
+section .color:nth-child(1){
+    top: -350px;
+    left: 100px;
+    width: 800px;
+    height: 600px;
+    background: #79e646;
+}
+section .color:nth-child(2){
+    bottom: -150px;
+    left: 90px;
+    width: 600px;
+    height: 650px;
+    background: #1c720b;
+}
+section .color:nth-child(3){
+    bottom: 50px;
+    right: 100px;
+    width: 350px;
+    height: 500px;
+    background: #54dd04;
+}
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------------Search bar-----------------------------------------*/
+.search_bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.185);
+    border-radius: 10px;
+    width: 80%;
+    margin: 2rem;
+    padding: 1rem;
+    color: white;
+}
+.box_inputs{
+    display: flex;
+  justify-items: center;
+}
+.inputBox input{
+    width: auto;
+    background: rgb(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 0rem;
+    border-radius: 35px;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    border-right: 1px solid rgb(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.05);
+}
+
+/*------------------------------------------------------------------------------------*/
+.iconsTable{
+    width: 20px;
+    height: 20px;
+}
+.datatable_container .header_tools{
+    border: 1px solid black;
+    padding: 3px;
+    display: flex;
+    align-items: baseline;
+}
+.datatable_container .header_tools .search{
+    width: 30%;
+}
+.datatable_container .header_tools .search .search_input{
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: white;
+}
+.datatable_container .header_tools .tools{
+    width: 70%;
+}
+.datatable_container .header_tools .tools ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    list-style: none;
+}
+.tools li{
+    display: inline-block;
+    margin:0 0.5em;
+    align-items: baseline;
+}
+.datatable_container .footer_tools{
+    padding: var(--dt-padding-xs);
+    display: flex;
+    align-items: baseline;
+}
+.datatable_container .footer_tools .list_items{
+    width: 50%;
+}
+.datatable_container .footer_tools .pages{
+    margin-left: auto;
+    margin-right: 0;
+    width: 50%;
+}
+.datatable_container .footer_tools .pages ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    align-items: flex-end;
+    list-style: none;
+}
+.datatable_container .footer_tools .pages ul li{
+    display: inline-block;
+    margin:0 0.5em;
+}
+.datatable_container .footer_tools .pages ul li button,
+.datatable_container .header_tools .tools ul li button{
+    color: white;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+}
+.datatable_container .footer_tools .pages ul li button:hover,
+.datatable_container .header_tools .tools ul li button:hover{
+    background: rgb(34, 34, 34);
+    color: white;
+}
+
+
+
+/*--------------------------------------Table-----------------------------------------*/
+table{
+    border-collapse: collapse;
+}
+.MyNewDatatable{
+    height: 300px;
+    overflow: auto;
+    border: 0px solid #dddddd;
+    box-shadow: 2px 2px 20px black;
+}
+.MyNewDatatable thead th{
+    position: sticky;
+    top:0;
+    background-color: rgb(200, 200, 200, 0.5);
+    color: black;
+}
+th{
+    border-radius: 0px 0 0 0px;
+}
+td{
+    border-radius: 0px 0px 0px 0px;
+}
+th, td{
+    padding: 20px 15px;
+    font-size: 14px;
+}
+tbody{
+    color: rgb(255, 255, 255);
+}
+tr:hover td{
+    color: #cadbc3;
+}
+tr:nth-child(even){
+    background-color: rgba(221, 221, 221, 0.2);
+}
+tr:nth-child(odd){
+    background-color: rgba(221, 221, 221, 0.4);;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: white;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0);
+}
+::-webkit-scrollbar-thumb{
+    -webkit-box-shadow:inset 0 0 6px rgb(0, 0, 0);
+}
+/*------------------------------------------------------------------------------------*/
+
+
